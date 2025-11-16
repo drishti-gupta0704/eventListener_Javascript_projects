@@ -56,3 +56,18 @@ form.addEventListener("submit", (e) => {
 });
 
 
+//  Focus & Blur Events
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", () => {
+    input.style.borderColor = "#4CAF50";
+  });
+
+  input.addEventListener("blur", () => {
+    if (input.value.trim() === "") {
+      input.style.borderColor = "red";
+    } else {
+      input.style.borderColor = "#4CAF50";
+    }
+  });
+});
