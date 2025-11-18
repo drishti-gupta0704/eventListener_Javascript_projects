@@ -40,3 +40,18 @@ questions.forEach((q) => {
     });
 });
 
+
+// writing search filter functionality code
+const search = document.createElement("input");
+search.setAttribute("type", "text");
+search.setAttribute("id", "search");
+search.setAttribute("placeholder", "Search FAQs...");
+document.body.insertBefore(search, document.querySelector(".accordion"));
+
+search.addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase();
+    document.querySelectorAll(".item").forEach((item) => {
+        const text = item.querySelector(".question").innerText.toLowerCase();
+        item.style.display = text.includes(term) ? "block" : "none";
+    });
+});
